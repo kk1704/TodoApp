@@ -105,7 +105,7 @@ const updateUser = async (req, res) => {
         } else {
             let updateTask = await Todo.update({
                 name: req.body.name, task: req.body.task
-            }, {where: { id: req.params.id }})
+            }, { where: { id: req.params.id } })
             // return res.status(200).send(updateTask)
             return res.status(200).send("Record updated successfully..")
         }

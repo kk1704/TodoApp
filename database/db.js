@@ -1,4 +1,4 @@
-const Sequelize =  require("sequelize")
+const Sequelize = require("sequelize")
 const dotenv = require("dotenv").config()
 
 const database = process.env.DATABASE
@@ -7,7 +7,7 @@ const password = process.env.PASSWORD
 
 const sequelize = new Sequelize(database, 'root', password, {
     dialect: 'mysql',
-    host: 'localhost'
+    host: process.env.HOST || 'localhost'
 })
 
 module.exports = sequelize
